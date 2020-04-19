@@ -2,6 +2,10 @@
 import {mapService} from './service/map-service.js'
 
 var gElLocation = document.querySelector('.location span');
+var gUserPosition = {
+  lat: '',
+  lng: ''
+}
 
 //window.addEventListener('load', mapService.getUserLocation)
 window.addEventListener('load', init)
@@ -16,23 +20,26 @@ function init() {
 // define elLocation
 function getUserLocation() {
   if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(initMap);
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
     gElLocation.innerHTML = "Geolocation is not supported by this browser.";
   }
 
-  initMap();
+  
 }
 
 
-function initMap() {
+function initMap(position) {
   // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
+  //var uluru = {lat: -25.344, lng: 131.036};
+  //User Location:
+  gUserPosition = {lat: position.coords.latitude, lng: position.coords.longitude};
   // The map, centered at Uluru
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
+      document.getElementById('map'), {zoom: 12, center: gUserPosition});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+  var marker = new google.maps.Marker({position: gUserPosition, map: map});
 }
 
 
@@ -55,9 +62,10 @@ function onSearch() {
 
 
 function showPosition(position) {
+    console.log('position: ', position);
   
-  gElLocation.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
+  // gElLocation.innerHTML = "Latitude: " + position.coords.latitude +
+  // "<br>Longitude: " + position.coords.longitude;
 }
 
 
