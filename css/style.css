@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: lightpink;
+}
+
+.adj-size{
+    height: 2em;
+    margin-top: 2.5em;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px solid black;
+}
+
+/* HELPERS */
+
+.flex{
+    display: flex;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
+}
+
+.space-around{
+    justify-content: space-around;
+}
