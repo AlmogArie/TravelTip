@@ -17,13 +17,13 @@
         <button class="my-location">My Location</button>
         <div class="location-items flex ">
             <input type="text" class="search-location adj-size">
-            <button class="go adj-size" onclick="getNewLocation()">Go</button>
+            <button class="go adj-size">Go</button>
             <button class="my-location adj-size">My location</button>
         </div>
     </header>
 
     <section class="main-section">
-        <h2 class="location"></h2>
+        <h2 class="location">Location: <span> </span></h2>
         <button class="copy-location">Copy Location</button>
         <article class="map">
             <div id="map" style="width:100%;height:400px;border:1px solid black"></div>
@@ -47,7 +47,7 @@
     </section>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiMp5dCfqfJAT1L3d746Z-gAb9T9qitFU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiMp5dCfqfJAT1L3d746Z-gAb9T9qitFU">
     </script>
     <script type="module" src="js/main.js"></script>
 </body>
