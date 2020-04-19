@@ -1,7 +1,7 @@
 console.log('main');
 
 
-initMap();
+//initMap();
 
 function initMap() {
     // The location of Uluru
