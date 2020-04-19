@@ -65,3 +65,13 @@ function showPosition(position) {
   elLocation.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
 }
+window.addEventListener('load', initMap)
+
+window.addEventListener('load', ()=>{
+    document.querySelector('.go').addEventListener('click', ()=>{
+        var locationVal = document.querySelector('.search-location').value
+        console.log('location' , locationVal);
+    });
+});
+
+

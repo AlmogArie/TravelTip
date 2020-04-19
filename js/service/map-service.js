@@ -1,4 +1,3 @@
-
 export const mapService = {
     
     search
@@ -27,6 +26,15 @@ function renderLocationTitle(txt) {
     return title.innerText = txt;
 }
 
-function onAddLocation(location){
-  return  gLocations.push(location);
+function onAddLocation(location) {
+    return gLocations.push(location);
+}
+
+
+// Getting the user search input
+
+
+function onSearchLocation() {
+    let elSearchBoxVal = document.querySelector('.search-location').value;
+    console.log(elSearchBoxVal)
 }
