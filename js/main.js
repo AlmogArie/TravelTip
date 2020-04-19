@@ -1,7 +1,7 @@
 
 import {mapService} from './service/map-service.js'
 
-
+var gElLocation = document.querySelector('.location span');
 
 //window.addEventListener('load', mapService.getUserLocation)
 window.addEventListener('load', init)
@@ -13,12 +13,12 @@ function init() {
 
 }
 
-
+// define elLocation
 function getUserLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    elLocation.innerHTML = "Geolocation is not supported by this browser.";
+    gElLocation.innerHTML = "Geolocation is not supported by this browser.";
   }
 
   initMap();
@@ -43,35 +43,23 @@ function bindEvents() {
   
   document.querySelector('.go').addEventListener('click', onSearch);
   
-  // document.querySelector('header select').addEventListener('change', onSetLang);
-  // document.querySelector('.filter-by-status').addEventListener('change', onSetFilter);
-  // document.querySelector('.btn-add').addEventListener('click', onAddTodo);
 }
 
 function onSearch() {
-  // var elBtnSearch = document.querySelector('.go');
-  //debugger
+  
   var elSearchInput = document.querySelector('.search-location');
   var placeToSearch = elSearchInput.value;
-  // todoService.addTodo(newTodoTxt);
-  // elBtnSearch.addEventListener('click', onSearch)
   mapService.search(placeToSearch)
 } 
 
 
 
 function showPosition(position) {
-  var elLocation = document.querySelector('.location span');
-  elLocation.innerHTML = "Latitude: " + position.coords.latitude +
+  
+  gElLocation.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
 }
-window.addEventListener('load', initMap)
 
-window.addEventListener('load', ()=>{
-    document.querySelector('.go').addEventListener('click', ()=>{
-        var locationVal = document.querySelector('.search-location').value
-        console.log('location' , locationVal);
-    });
-});
+
 
 

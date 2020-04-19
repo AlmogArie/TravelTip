@@ -31,10 +31,3 @@ function onAddLocation(location) {
 }
 
 
-// Getting the user search input
-
-
-function onSearchLocation() {
-    let elSearchBoxVal = document.querySelector('.search-location').value;
-    console.log(elSearchBoxVal)
-}
